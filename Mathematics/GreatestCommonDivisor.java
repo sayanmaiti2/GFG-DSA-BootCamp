@@ -4,12 +4,13 @@ import java.util.Scanner;
 
 public class GreatestCommonDivisor {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the two numbers:\n");
-        int num1 = sc.nextInt();
-        int num2 = sc.nextInt();
-        int gcd = gcdEuclidOptimised(num1, num2);
-        System.out.printf("GCD of %d and %d is %d%n", num1, num2, gcd);
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Enter the two numbers:\n");
+            int num1 = sc.nextInt();
+            int num2 = sc.nextInt();
+            int gcd = gcdEuclidOptimised(num1, num2);
+            System.out.printf("GCD of %d and %d is %d%n", num1, num2, gcd);
+        }
 
     }
 
