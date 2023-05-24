@@ -8,7 +8,7 @@ public class PrimeFactors {
         System.out.println("Enter a number:");
         int num = sc.nextInt();
         System.out.printf("The prime factors of %d are:\n", num);
-        printPrimeFactorsOptimised(num);
+        printPrimeFactors(num);
     }
 
     /**
@@ -25,6 +25,38 @@ public class PrimeFactors {
                     x = x * i;
                 }
             }
+        }
+    }
+
+     /**
+     * A method that calculates and prints the prime factors of a given number.
+     * It explicitly checks for divisibility by 2 and 3 to reduce multiple iterations.
+     * It has a time complexity of Theta(Sqaure root of n)
+     * @param n an integer number
+     */
+    private static void printPrimeFactors(int n) {
+        if (n <= 1)
+            return;
+        if (n % 2 == 0) {
+            System.out.print(2 + "\t");
+            n = n/2;
+        }
+        if (n % 3 == 0) {
+            System.out.print(3 + "\t");
+            n = n/3;
+        }
+        for (int i = 5; i*i <= n; i=i+6) {
+            while (n % i == 0) {
+                System.out.print(i + "\t");
+                n = n/i;
+            }
+            while ( n % (i+2) == 0) {
+                System.out.print((i+2) + "\t");
+                n = n/(i+2); 
+            }
+        }
+        if (n > 3) {
+            System.out.print(n);
         }
     }
 
