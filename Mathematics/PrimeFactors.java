@@ -37,11 +37,11 @@ public class PrimeFactors {
     private static void printPrimeFactors(int n) {
         if (n <= 1)
             return;
-        if (n % 2 == 0) {
+        while (n % 2 == 0) {
             System.out.print(2 + "\t");
             n = n/2;
         }
-        if (n % 3 == 0) {
+        while (n % 3 == 0) {
             System.out.print(3 + "\t");
             n = n/3;
         }
