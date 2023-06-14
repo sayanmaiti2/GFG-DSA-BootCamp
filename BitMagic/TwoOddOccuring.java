@@ -10,6 +10,10 @@ public class TwoOddOccuring {
         }
     }
 
+    /*
+     * Time Complexity: Theta(n)
+     * Auxiliary Space: Theta(1)
+     */
     private static int[] findTwoOdd(int[] arr) {
         int[] result = new int[2];
         int temp = arr[0];
