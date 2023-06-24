@@ -22,7 +22,7 @@ public class MaximumAND {
     private static int calculcateMaximumAND(int[] arr, int n) {
         int res = 0;
         int count;
-        for(int bit = 4; bit >= 0; bit--) {
+        for(int bit = 31; bit >= 0; bit--) {
             count = 0;
             count = countSetBit((res | 1 << bit), arr, n);
             if (count >= 2) {
